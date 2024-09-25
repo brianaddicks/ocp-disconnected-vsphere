@@ -6,12 +6,13 @@ controller_components:
   - projects
   - inventories
   - inventory_sources
-  - job_templates
+  # - job_templates
 
 aap_cred: 'AAP API Cred'
 ssh_cred: 'SSH Cred'
 vcenter_cred: 'vCenter Cred'
 quay_cred: 'Quay'
+ad_domain_cred: 'Active Directory Cred'
 
 # rh_org_cred: 'Red Hat Organization ID'
 
@@ -58,6 +59,14 @@ controller_credentials:
       password: "{{ lookup('ansible.builtin.env', 'QUAY_PASSWORD') }}"
       username: "{{ lookup('ansible.builtin.env', 'QUAY_USERNAME') }}"
       verify_ssl: true
+  - name: '{{ ad_domain_cred }}'
+    description: '{{ ad_domain_cred }}'
+    organization: Default
+    credential_type: Machine
+    inputs:
+      password: "{{ lookup('ansible.builtin.env', 'ANSIBLE_PSRP_PASSWORD') }}"
+      username: "{{ lookup('ansible.builtin.env', 'ANSIBLE_PSRP_USER') }}"
+      become_method: runas
 
 controller_projects:
   - name: '{{ this_demo_project }}'

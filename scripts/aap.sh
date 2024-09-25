@@ -12,11 +12,7 @@ ansible-navigator run ../playbooks/aap_configure.yml \
   --penv QUAY_HOST \
   --penv QUAY_PASSWORD \
   --penv QUAY_USERNAME \
-  --penv ONEAGENT_ENVIRONMENT_URL \
-  --penv ONEAGENT_PAAS_TOKEN \
-  --penv SN_HOST \
-  --penv SN_USERNAME \
-  --penv SN_PASSWORD \
-  --penv RHC_ORGANIZATION \
-  -i ../inventory.yml #\
- # -m stdout
+  --penv ANSIBLE_PSRP_USER \
+  --penv ANSIBLE_PSRP_PASSWORD \
+  -i ../inventory.yml \
+  -m stdout

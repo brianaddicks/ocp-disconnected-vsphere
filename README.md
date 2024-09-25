@@ -1,0 +1,1 @@
+# ocp-disconnected-vsphere

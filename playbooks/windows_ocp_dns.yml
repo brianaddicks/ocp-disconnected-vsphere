@@ -6,7 +6,7 @@
   tasks:
     - name: Create forward record
       community.windows.win_dns_record:
-        name: "{{ inventory_hostname_short }}"
+        name: "{{ inventory_hostname_short }}.{{ ocp_subdomain }}"
         type: "A"
         value: "{{ ip_address }}"
         zone: "{{ ocp_domain }}"

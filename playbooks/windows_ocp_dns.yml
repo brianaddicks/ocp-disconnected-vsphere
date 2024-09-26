@@ -10,3 +10,4 @@
         type: "A"
         value: "{{ ip_address }}"
         zone: "{{ inventory_hostname.split('.')[1:] | join('.') }}"
+      delegate_to: addicks.us

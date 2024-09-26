@@ -1,6 +1,6 @@
 all:
   children:
-    cluster:
+    ocpcluster:
       hosts:
         master1.addicks.us:
           vars:

@@ -111,4 +111,4 @@ controller_templates:
     playbook: 'playbooks/windows_ocp_dns.yml'
     execution_environment: '{{ windows_ee }}'
     credentials:
-      - '{{ windows_cred }}'
+      - '{{ ad_domain_cred }}'

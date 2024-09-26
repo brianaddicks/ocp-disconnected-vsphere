@@ -67,7 +67,7 @@ controller_projects:
     scm_delete_on_update: 'no'
     scm_type: git
     scm_update_on_launch: 'no'
-    scm_url: https://github.com/brianaddicks/demo-aap-snow
+    scm_url: '{{ this_demo_project_repo }}'
     update_project: true
 
 controller_execution_environments:

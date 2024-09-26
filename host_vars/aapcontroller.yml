@@ -19,6 +19,7 @@ ad_domain_cred: 'Active Directory Cred'
 vcenter_ee: vCenter EE
 rhel_ee: RHEL EE
 aap_ee: AAP EE
+windows_ee: Windows EE
 
 this_demo_inventory: Disconnected OCP
 this_demo_project: Disconnected OCP
@@ -92,10 +93,10 @@ controller_execution_environments:
     image: quay.io/rh_ee_baddicks/ansible-controller-ee
     credential: '{{ quay_cred }}'
     pull: always
-#   - name: '{{ snow_ee }}'
-#     image: quay.io/rh_ee_baddicks/snow-ee
-#     credential: '{{ quay_cred }}'
-#     pull: always
+  - name: '{{ windows_ee }}'
+    image: quay.io/rh_ee_baddicks/windows-ee
+    credential: Quay
+    pull: always
 
 controller_inventories:
   - name: '{{ this_demo_inventory }}'

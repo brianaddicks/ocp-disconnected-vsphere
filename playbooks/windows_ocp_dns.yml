@@ -1,0 +1,12 @@
+---
+- name: Add DNS Records for OCP
+  gather_facts: false
+  hosts: ocpcluster
+
+  tasks:
+    - name: Create forward record
+      community.windows.win_dns_record:
+        name: "{{ inventory_hostname_short }}"
+        type: "A"
+        value: "{{ ip_address }}"
+        zone: "{{ inventory_hostname.split('.')[1:] | join('.') }}"

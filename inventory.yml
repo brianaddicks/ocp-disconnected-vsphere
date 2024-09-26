@@ -1,5 +1,27 @@
 all:
   children:
+    cluster:
+      hosts:
+        master1.addicks.us:
+          vars:
+            ip_address: 10.10.51.11
+        master2.addicks.us:
+          vars:
+            ip_address: 10.10.51.12
+        master3.addicks.us:
+          vars:
+            ip_address: 10.10.51.13
+      vars:
+        wildcard_ip: 10.10.51.253
+        api_ip: 10.10.51.254
+    windowservers:
+      children:
+        domaincontrollers:
+          hosts:
+            addicks.us:
+      vars:
+        ansible_connection: psrp
+        ansible_psrp_protocol: http
     apiendpoints:
       hosts:
         aapcontroller:

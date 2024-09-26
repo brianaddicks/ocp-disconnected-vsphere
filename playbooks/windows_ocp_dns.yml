@@ -9,5 +9,5 @@
         name: "{{ inventory_hostname_short }}"
         type: "A"
         value: "{{ ip_address }}"
-        zone: "{{ inventory_hostname.split('.')[1:] | join('.') }}"
+        zone: "{{ ocp_domain }}"
       delegate_to: addicks.us

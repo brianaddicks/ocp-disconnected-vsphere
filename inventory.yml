@@ -11,6 +11,7 @@ all:
       vars:
         wildcard_ip: 10.10.51.253
         api_ip: 10.10.51.254
+        ocp_domain: ocp.addicks.us
     windowservers:
       children:
         domaincontrollers:
